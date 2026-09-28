@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<title>Читанка — макет головної сторінки</title>
+<style>
+  /* каркасний макет (wireframe): лише розміщення елементів, без фінального дизайну */
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 15px/1.4 Arial, sans-serif; color: #222; background: #fff; }
+  .num { display: inline-block; min-width: 22px; height: 22px; line-height: 22px; border-radius: 11px;
+         background: #c0392b; color: #fff; font-size: 12px; font-weight: bold; text-align: center; margin-right: 6px; }
+  header { display: flex; align-items: center; gap: 16px; padding: 12px 20px; border-bottom: 2px solid #444; }
+  .logo { font-size: 22px; font-weight: bold; }
+  .search { flex: 1; display: flex; }
+  .search input { flex: 1; padding: 8px; border: 1px solid #888; }
+  .search button, .btn { padding: 8px 14px; border: 1px solid #444; background: #eee; }
+  .wrap { display: flex; min-height: 560px; }
+  aside { width: 230px; border-right: 2px solid #444; padding: 14px; background: #f6f6f6; }
+  aside h4 { margin: 14px 0 6px; font-size: 13px; text-transform: uppercase; color: #555; }
+  aside a { display: block; padding: 5px 8px; color: #222; text-decoration: none; }
+  aside a.active { background: #ddd; font-weight: bold; }
+  main { flex: 1; padding: 16px 20px; }
+  .banner { border: 1px dashed #888; padding: 18px; margin-bottom: 16px; background: #fafafa; }
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .card { border: 1px solid #888; padding: 8px; }
+  .cover { height: 110px; background: repeating-linear-gradient(45deg,#ddd 0 8px,#eee 8px 16px); margin-bottom: 6px; }
+  .card small { color: #666; display: block; }
+  .pages { margin-top: 14px; text-align: center; }
+  footer { border-top: 2px solid #444; padding: 10px 20px; font-size: 13px; color: #555; }
+</style>
+</head>
+<body>
+<header>
+  <span class="num">1</span><span class="logo">Читанка</span>
+  <form class="search"><span class="num">2</span><input placeholder="Назва, автор або ISBN"><button>Знайти</button></form>
+  <span class="num">3</span><a class="btn">Увійти</a><a class="btn">Реєстрація</a>
+</header>
+<div class="wrap">
+  <aside>
+    <span class="num">4</span><b>Навігація</b>
+    <a class="active">Головна</a><a>Каталог</a><a>Новинки</a><a>Популярне</a>
+    <h4>Жанри</h4>
+    <a>Художня література</a><a>Фантастика</a><a>Детективи</a><a>Наукова література</a><a>Програмування</a><a>Історія</a>
+    <h4>Мій кабінет</h4>
+    <a>Мої полиці</a><a>Мої бронювання</a><a>Мої відгуки</a>
+  </aside>
+  <main>
+    <div class="banner"><span class="num">5</span><b>Оголошення бібліотеки</b> — графік роботи, нові надходження, правила бронювання</div>
+    <h3><span class="num">6</span>Нові надходження</h3>
+    <div class="grid">
+      <div class="card"><div class="cover"></div><b>Назва книги</b><small>Автор</small><small>★★★★☆ · доступно: 3</small></div>
+      <div class="card"><div class="cover"></div><b>Назва книги</b><small>Автор</small><small>★★★★★ · доступно: 1</small></div>
+      <div class="card"><div class="cover"></div><b>Назва книги</b><small>Автор</small><small>★★★☆☆ · немає в наявності</small></div>
+      <div class="card"><div class="cover"></div><b>Назва книги</b><small>Автор</small><small>★★★★☆ · доступно: 5</small></div>
+    </div>
+    <h3><span class="num">7</span>Популярне цього місяця</h3>
+    <div class="grid">
+      <div class="card"><div class="cover"></div><b>Назва книги</b><small>Автор</small></div>
+      <div class="card"><div class="cover"></div><b>Назва книги</b><small>Автор</small></div>
+      <div class="card"><div class="cover"></div><b>Назва книги</b><small>Автор</small></div>
+      <div class="card"><div class="cover"></div><b>Назва книги</b><small>Автор</small></div>
+    </div>
+  </main>
+</div>
+<footer><span class="num">8</span>Контакти бібліотеки · Правила користування · © 2026 Читанка</footer>
+</body>
+</html>

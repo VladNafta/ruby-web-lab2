@@ -1,0 +1,57 @@
+erDiagram
+  USER ||--o{ RESERVATION : "створює"
+  USER ||--o{ REVIEW : "пише"
+  USER ||--o{ SHELF_ITEM : "має"
+  BOOK ||--o{ RESERVATION : "бронюється"
+  BOOK ||--o{ REVIEW : "отримує"
+  BOOK ||--o{ SHELF_ITEM : "додається"
+  AUTHOR }o--o{ BOOK : "пише"
+  GENRE ||--o{ BOOK : "класифікує"
+  USER {
+    int id PK
+    string name
+    string email UK
+    string password_digest
+    string role
+    datetime confirmed_at
+    datetime created_at
+  }
+  BOOK {
+    int id PK
+    string title
+    string isbn UK
+    int year
+    int genre_id FK
+    int copies_total
+    int copies_available
+    text description
+  }
+  AUTHOR {
+    int id PK
+    string full_name
+  }
+  GENRE {
+    int id PK
+    string name UK
+  }
+  RESERVATION {
+    int id PK
+    int user_id FK
+    int book_id FK
+    string status
+    date pickup_until
+    date due_date
+  }
+  REVIEW {
+    int id PK
+    int user_id FK
+    int book_id FK
+    int rating
+    text body
+  }
+  SHELF_ITEM {
+    int id PK
+    int user_id FK
+    int book_id FK
+    string shelf
+  }
